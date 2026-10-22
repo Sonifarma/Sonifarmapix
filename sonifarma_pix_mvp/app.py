@@ -184,7 +184,7 @@ def health():return {'app':'ok','bank_connection':'not_configured','version':'1.
 
 @app.get('/',response_class=HTMLResponse)
 def home():
-    with open(os.path.join(BASE,'index.html'),encoding='utf-8') as f:return HTMLResponse(f.read(),headers={'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'"})
+    with open(os.path.join(BASE,'index.html'),encoding='utf-8') as f:return HTMLResponse(f.read(),headers={'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'"})
 
 @app.get('/panel.js')
 def js():

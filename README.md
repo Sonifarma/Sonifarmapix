@@ -37,4 +37,11 @@ python -m unittest discover -s tests -v
 
 Quatro testes do atualizador passaram no Linux. O lançador BAT e a operação da tarefa agendada ainda precisam de validação no Windows. Verificações locais da aplicação confirmaram login, permissões, simulador, totais, CSV e usuários, com dados fictícios.
 
-Defeito conhecido na aplicação importada: logout com `Referer` e sem `Origin` pode retornar HTTP 500. A identidade visual do SonifarmaCRM ainda não foi aplicada. Não exponha este protótipo na internet ou use seus registros como confirmação bancária.
+Defeito conhecido na aplicação importada: logout com `Referer` e sem `Origin` pode retornar HTTP 500. A interface usa a identidade visual do SonifarmaCRM: logo incorporado, turquesa e laranja, navegação lateral e telas responsivas. Não exponha este protótipo na internet ou use seus registros como confirmação bancária.
+
+
+## Tema SonifarmaCRM
+
+Esta versão mantém as funções de recebimentos e gerência e aplica a identidade visual do CRM. O logo está incorporado no HTML e a política de conteúdo permite essas imagens locais, dispensando novos arquivos na atualização. Atualize pelo procedimento acima e pressione **Ctrl+F5** no navegador.
+
+A navegação, o login, o logo, o estado sem recebimentos, as cores e o layout em desktop, tablet e celular foram verificados em Chromium. O teste `tests/test_visual.cjs` requer Playwright, Chromium e servidor de teste na porta 8080 com usuário fictício `visual`, perfil gerência e senha na variável `PIX_TEST_PASSWORD`; use banco isolado. `PLAYWRIGHT_MODULE` e `CHROMIUM_EXECUTABLE` podem indicar as instalações dessas ferramentas. Não execute com contas ou dados reais.
