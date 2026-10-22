@@ -1,0 +1,11 @@
+Sonifarma - teste isolado de autenticacao sandbox Itaú
+
+1. Copie teste_token_sandbox.py para C:\SonifarmaPix\integracao_itau\
+2. Abra PowerShell nessa pasta.
+3. Execute: py -3.12 .\teste_token_sandbox.py
+   Alternativa: C:\SonifarmaPix\sonifarma_pix_mvp\.venv\Scripts\python.exe .\teste_token_sandbox.py
+4. Informe Client ID e Client Secret do sandbox apenas no terminal (nao aparecem na tela).
+5. Envie somente o codigo HTTP e as linhas 'Campos retornados', 'Token presente' e 'Expiracao em segundos'.
+
+O teste nao altera o Pix Monitor V1.1, a porta 8080, a tarefa agendada nem o banco.
+Nao execute como tarefa agendada; nao salve credenciais em arquivos.
